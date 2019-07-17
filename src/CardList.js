@@ -1,20 +1,26 @@
-import React from 'react';
+import React, {Component} from 'react';
+import Resize from "./resizer";
 import Card from './Card';
 
-const CardList = ({cards}) => {
-  let cardList = cards.map(card => 
-      <Card 
-        key={card.id}
-      />
-    )
+class CardList extends Component {
 
-  return (
-    <div class="scaleable-wrapper" id="scaleable-wrapper">
-      <div class="very-specific-design" id="very-specific-design">
-        <div class="flex-container">{cardList}</div>
+
+  componentDidMount() {
+    Resize();
+  }
+  render() {
+    let cardList = this.props.cards.map(card => <Card key={card.id} />);
+
+    return (
+      <div>
+        <div class="scaleable-wrapper" id="scaleable-wrapper">
+          <div class="very-specific-design" id="very-specific-design">
+            <div class="flex-container">{cardList}</div>
+          </div>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } 
 }
 
 export default CardList;

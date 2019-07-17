@@ -1,10 +1,12 @@
 import React from 'react';
+import RubberBand from "react-reveal/RubberBand";
 
 const Card = () => {
   return(
-    <div
-      
-    ></div>
+    <RubberBand>
+      <div></div>
+    </RubberBand>
+    
   )
 }
 

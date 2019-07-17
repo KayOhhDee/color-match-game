@@ -123,14 +123,9 @@
   width: 100vw;
   resize: both;
   position: relative;
-  background: #666;
   height: 100vh;
 }
 
-.bigred {
-  color: red;
-  font-size: 5rem;
-}
 
 .flex-container {
   display: flex;

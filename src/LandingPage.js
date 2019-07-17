@@ -1,10 +1,10 @@
 import React from "react";
 
-const LandingPage = () => {
+const LandingPage = ({handleStart}) => {
   return (
     <div className='landing'>
       <h1>ColorMatch</h1>
-      <button>Start</button>
+      <button onClick={handleStart}>Start</button>
     </div>
   );
 };

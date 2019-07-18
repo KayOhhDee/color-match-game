@@ -5,6 +5,7 @@ import Cards from './CardColors';
 import Navbar from './Navbar';
 import LandingPage from './LandingPage';
 import CardList from './CardList';
+import WinMessage from './WinMessage';
 import './App.css';
 
 class App extends Component {
@@ -78,7 +79,9 @@ class App extends Component {
     console.log(unmatched.length)
     
     if(unmatched.length === 1) {
-      this.setState({showCardList: false, showStart: false, winMessage: true})
+      setTimeout(() => {
+         this.setState({showCardList: false, showStart: false, winMessage: true})
+      }, 3000)
     }
   }
 
@@ -102,9 +105,7 @@ class App extends Component {
           <CardList cards={this.state.cards} handleClick={this.handleClick}/>
         )}
         {this.state.winMessage && (
-          <div>
-            <h2>You Won!!!!</h2>
-          </div>
+          <WinMessage />
         )}
       </div>
     );

@@ -2,7 +2,6 @@ function Resize() {
   var elem = document.getElementById("very-specific-design");
   var elemWidth = elem.offsetWidth;
   var elemHeight = elem.offsetHeight;
-  console.log(elemWidth);
 
   var wrapper = document.getElementById("scaleable-wrapper");
 
@@ -13,7 +12,7 @@ function Resize() {
 
     scale = Math.min(ui.size.width / elemWidth, ui.size.height / elemHeight);
 
-    elem.style.transform = "translate(-50%, -50%) " + "scale(" + scale + ")";
+    elem.style.transform = `translate(-50%, -50%) scale(${scale})`;
   }
 
   var starterData = {

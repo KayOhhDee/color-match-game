@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import shuffle from 'shuffle-array';
+import { CardState } from "./CardColors";
 import Cards from './CardColors';
 import Navbar from './Navbar';
 import LandingPage from './LandingPage';
@@ -15,10 +16,15 @@ class App extends Component {
 
     this.state = {cards, noClick: false, showStart: true, showCardList: false}
     this.handleStart = this.handleStart.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleStart() {
     this.setState({showStart: false, showCardList: true});
+  }
+
+  handleClick(id) {
+
   }
 
   render() {
@@ -29,7 +35,7 @@ class App extends Component {
           <LandingPage handleStart={this.handleStart} />
         )}
         {this.state.showCardList && (
-        <CardList cards={this.state.cards} />
+          <CardList cards={this.state.cards} handleClick={this.handleClick}/>
         )}
       </div>
     );

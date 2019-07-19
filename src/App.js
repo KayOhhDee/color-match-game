@@ -25,7 +25,10 @@ class App extends Component {
     this.handleStart = this.handleStart.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleNewGame = this.handleNewGame.bind(this);
+    this.timeEndgame = null;
+    this.timer = null;
   }
+
 
   handleStart() {
     this.setState({showStart: false, showCardList: true, winMessage: false});
@@ -67,7 +70,7 @@ class App extends Component {
       noClick = true;
 
       this.setState({cards, noClick}, () => {
-        setTimeout(() => {
+        this.timer = setTimeout(() => {
           this.setState({cards: hidingCards, noClick: false})
         }, 1200);
       })
@@ -76,14 +79,14 @@ class App extends Component {
     this.setState({cards, noClick});
 
     let unmatched = this.state.cards.filter(c => c.cardState === CardState.HIDING)
-    console.log(unmatched.length)
     
     if(unmatched.length === 1) {
-      setTimeout(() => {
+      this.timeEndgame = setTimeout(() => {
          this.setState({showCardList: false, showStart: false, winMessage: true})
       }, 3000)
     }
   }
+
 
   handleNewGame() {
     let cards = this.state.cards.map(card => ({
@@ -92,6 +95,11 @@ class App extends Component {
       }))
       cards = shuffle(cards);
       this.setState({cards, showCardList: true, showStart: false, winMessage: false});
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.timer);
+    clearTimeout(this.timeEndgame);
   }
 
   render() {

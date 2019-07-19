@@ -5,7 +5,7 @@ const Navbar = ({handleNewGame}) => {
     <header>
       <nav className="navbar">
         <h1 className="navbar-brand">ColorMatch</h1>
-        <ul className ="navbar-link"><li><a onClick={handleNewGame}>New Game</a></li></ul>
+        <ul className ="navbar-link"><li><button onClick={handleNewGame}>New Game</button></li></ul>
       </nav>
     </header>
   );

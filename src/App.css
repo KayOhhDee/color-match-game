@@ -59,6 +59,12 @@
   letter-spacing: 2px;
 }
 
+.landing > p {
+  margin: 0;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
 .landing > button {
   margin-top: 3.5rem;
   margin-bottom: 3.5rem;
@@ -81,6 +87,10 @@
 @media screen and (max-width: 576px) {
   .landing > h1 {
     font-size: 4.5rem;
+  }
+
+  .landing > p {
+    letter-spacing: 1px;
   }
 }
 

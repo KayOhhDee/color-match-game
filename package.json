@@ -2,7 +2,7 @@
   "name": "color-match-game",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/KayOhhDee/color-match-game.git",
+  "homepage": ".",
   "dependencies": {
     "gh-pages": "^2.1.1",
     "react": "^16.8.6",

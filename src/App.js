@@ -22,19 +22,17 @@ class App extends Component {
       showCardList: false,
       winMessage: false
     }
-    this.handleStart = this.handleStart.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-    this.handleNewGame = this.handleNewGame.bind(this);
+
     this.timeEndgame = null;
     this.timer = null;
   }
 
 
-  handleStart() {
+  handleStart = () => {
     this.setState({showStart: false, showCardList: true, winMessage: false});
   }
 
-  handleClick(id) {
+  handleClick = (id) =>{
     const mapCardState = (cards, idsToChange, newCardState) => {
       return cards.map(card => {
         if(idsToChange.includes(card.id)) {
@@ -88,7 +86,7 @@ class App extends Component {
   }
 
 
-  handleNewGame() {
+  handleNewGame = () => {
     let cards = this.state.cards.map(card => ({
         ...card,
         cardState: CardState.HIDING
